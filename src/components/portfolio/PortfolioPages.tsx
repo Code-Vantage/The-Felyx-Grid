@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { PortfolioProject } from "../../lib/portfolio";
-import { getRelatedProjects, portfolioProjects } from "../../lib/portfolio";
 import { ProjectGallery } from "./ProjectGallery";
 
 function Eyebrow({ children }: { children: string }) {
@@ -105,8 +104,8 @@ function ProjectCard({
   );
 }
 
-export function PortfolioIndexPage() {
-  const [featured, ...projects] = portfolioProjects;
+export function PortfolioIndexPage({ projects }: { projects: PortfolioProject[] }) {
+  const [featured, ...remainingProjects] = projects;
 
   return (
     <main className="relative overflow-hidden bg-background text-cream">
@@ -130,7 +129,7 @@ export function PortfolioIndexPage() {
       <section className="relative z-[1] mx-auto max-w-[1280px] px-5 pb-28 sm:px-8 lg:pb-36">
         {featured ? <ProjectCard featured project={featured} /> : null}
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
-          {projects.map((project) => (
+          {remainingProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
@@ -188,20 +187,20 @@ function FeatureIcon({ index }: { index: number }) {
 
 const featureCards = [
   {
-    title: "Immersive User Experience",
-    description: "Focused interface flows that make the product easy to explore, understand, and trust.",
+    title: "Clear User Flows",
+    description: "Page structures and interface flows designed around common user tasks.",
   },
   {
-    title: "Fast Performance",
-    description: "Clean front-end architecture tuned for quick loading, smooth browsing, and reliable usage.",
+    title: "Responsive Performance",
+    description: "Layouts and assets prepared for fast loading across screen sizes.",
   },
   {
-    title: "Scalable Build",
-    description: "Flexible foundations that support future content, integrations, and product growth.",
+    title: "Maintainable Build",
+    description: "Code and content structure organized for future updates.",
   },
   {
-    title: "Conversion Ready",
-    description: "Clear page structure, strong calls to action, and polished details built around business goals.",
+    title: "Goal-Focused Pages",
+    description: "Calls to action and content hierarchy aligned with project goals.",
   },
 ];
 
@@ -219,7 +218,7 @@ function getOverviewCopy(project: PortfolioProject) {
       `The work centered on ${project.services
         .slice(0, 2)
         .join(" and ")
-        .toLowerCase()}, with a clean structure, refined visuals, and a build that can keep evolving after launch.`,
+        .toLowerCase()}, with clear structure, usable pages, and a build that can be updated after launch.`,
   ];
 }
 
@@ -274,8 +273,13 @@ function MoreWorkCard({ project }: { project: PortfolioProject }) {
   );
 }
 
-export function PortfolioDetailPage({ project }: { project: PortfolioProject }) {
-  const relatedProjects = getRelatedProjects(project.slug, 8);
+export function PortfolioDetailPage({
+  project,
+  relatedProjects,
+}: {
+  project: PortfolioProject;
+  relatedProjects: PortfolioProject[];
+}) {
   const overviewCopy = getOverviewCopy(project);
 
   return (
@@ -349,7 +353,7 @@ export function PortfolioDetailPage({ project }: { project: PortfolioProject }) 
             Key Features
           </h2>
           <p className="mt-5 text-lg leading-7 text-cream/60">
-            Engineered for excellence, designed for conversion
+            Core parts of the project approach
           </p>
         </div>
 
@@ -377,14 +381,13 @@ export function PortfolioDetailPage({ project }: { project: PortfolioProject }) 
               Ready to build something like this?
             </h2>
             <p className="mx-auto mt-6 max-w-[672px] text-lg leading-7 text-cream/70 lg:text-xl">
-              Let&apos;s create a digital experience that looks sharp, performs well, and supports
-              the way your brand grows.
+              Send us a short brief and we will review the scope, timeline, and next steps.
             </p>
             <Link
               className="mt-10 inline-flex h-16 items-center justify-center gap-2 rounded-full bg-brand px-8 font-display text-base uppercase tracking-[0.08em] text-cream shadow-[0_18px_45px_rgba(195,0,2,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#d50018]"
               href="/contact#contact-form"
             >
-              Book Free Call
+              Request Consultation
               <ArrowIcon />
             </Link>
           </div>
@@ -397,7 +400,7 @@ export function PortfolioDetailPage({ project }: { project: PortfolioProject }) 
             More Work
           </h2>
           <p className="mt-5 text-lg leading-7 text-cream/60">
-            Explore more projects crafted with the same attention to detail
+            Explore other websites and product interfaces from the portfolio
           </p>
         </div>
 

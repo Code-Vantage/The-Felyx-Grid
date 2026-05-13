@@ -10,8 +10,11 @@ import {
   ServicesSection,
   SocialSection,
 } from "../components/home";
+import { getFeaturedPortfolioProjects } from "../lib/portfolio";
 
-export default function Home() {
+export default async function Home() {
+  const featuredProjects = await getFeaturedPortfolioProjects(3);
+
   return (
     <main className="min-h-screen overflow-hidden bg-background text-cream">
       <Header />
@@ -19,7 +22,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <ManifestoSection />
-      <PortfolioSection />
+      <PortfolioSection projects={featuredProjects} />
       <ProcessSection />
       <SocialSection />
       <FAQSection />

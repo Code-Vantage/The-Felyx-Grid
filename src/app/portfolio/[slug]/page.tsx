@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Header, Footer } from "../../../components/home";
 import { PortfolioDetailPage } from "../../../components/portfolio/PortfolioPages";
-import { getProjectBySlug, portfolioProjects } from "../../../lib/portfolio";
+import { getPortfolioProjects, getProjectBySlug, getRelatedProjects } from "../../../lib/portfolio";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -11,15 +11,17 @@ type ProjectPageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return portfolioProjects.map((project) => ({
+export async function generateStaticParams() {
+  const projects = await getPortfolioProjects();
+
+  return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -35,16 +37,18 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
+  const relatedProjects = await getRelatedProjects(project.slug, 8);
+
   return (
     <>
       <Header contactHref="/contact#contact-form" hrefPrefix="/" startHref="/contact#contact-form" />
-      <PortfolioDetailPage project={project} />
+      <PortfolioDetailPage project={project} relatedProjects={relatedProjects} />
       <Footer hrefPrefix="/" />
     </>
   );

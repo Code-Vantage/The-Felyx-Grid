@@ -16,9 +16,9 @@ const tanMonCheri = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "The Felyx Grid | Luxury Digital Studio",
+  title: "The Felyx Grid | Web Design and Development Studio",
   description:
-    "The Felyx Grid builds immersive interfaces, brand systems, and premium web experiences for ambitious teams.",
+    "The Felyx Grid designs and builds websites, product interfaces, and brand systems for businesses.",
 };
 
 export default function RootLayout({

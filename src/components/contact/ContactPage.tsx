@@ -59,31 +59,31 @@ const processSteps: ProcessStep[] = [
   {
     step: "Step 1",
     title: "Discovery",
-    description: "Deep dive into your brand, goals, and target audience",
+    description: "Review your goals, audience, content, and project requirements",
     icon: iconDiscovery,
   },
   {
     step: "Step 2",
     title: "Strategy",
-    description: "Craft a tailored roadmap and technical architecture",
+    description: "Define scope, page structure, timeline, and technical approach",
     icon: iconStrategy,
   },
   {
     step: "Step 3",
     title: "Design",
-    description: "Create stunning visuals and user experiences",
+    description: "Create interface designs and review them with you",
     icon: iconDesign,
   },
   {
     step: "Step 4",
     title: "Development",
-    description: "Build with cutting-edge technology and best practices",
+    description: "Build the approved design with responsive, maintainable code",
     icon: iconDevelopment,
   },
   {
     step: "Step 5",
     title: "Launch",
-    description: "Deploy, optimize, and support your success",
+    description: "Launch, test, and support updates after release",
     icon: iconLaunch,
   },
 ];
@@ -307,7 +307,7 @@ function ProcessPreview() {
           Our Process
         </h2>
         <p className="mt-4 text-base leading-7 text-cream/60 sm:text-lg">
-          A proven framework for digital excellence
+          A clear process for planning, design, development, and launch
         </p>
       </div>
 
@@ -370,15 +370,14 @@ function QuickCallCard() {
             Prefer a quick call?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-cream/70 sm:text-lg">
-            Skip the form and book a free 30-minute consultation to discuss your project in
-            detail.
+            Send a short brief by email if you prefer to start the conversation that way.
           </p>
           <a
             className="mt-8 inline-flex h-16 w-full max-w-[334px] items-center justify-center gap-3 rounded-full bg-white px-5 font-display text-base tracking-[2px] text-background transition hover:-translate-y-0.5 hover:bg-cream"
             href="mailto:hello@thefelyxgrid.com?subject=Free%20consultation%20request"
           >
             <IconImage src={iconCalendar} className="size-5" />
-            Book Free Consultation
+            Request Consultation
           </a>
         </div>
       </div>
@@ -495,9 +494,9 @@ export function ContactPage() {
         <h1 className="font-display text-[clamp(2.6rem,5vw,47px)] leading-[1.18] text-cream lg:leading-[72px]">
           Ready to build
           <br />
-          something
+          your
           <br />
-          <span className="text-brand">un</span>forgettable?
+          <span className="text-brand">project?</span>
         </h1>
         <a
           className="mt-6 inline-flex h-16 items-center justify-center gap-3 rounded-full bg-brand px-8 font-display text-[15px] text-white transition hover:-translate-y-0.5 hover:bg-[#d8001f]"

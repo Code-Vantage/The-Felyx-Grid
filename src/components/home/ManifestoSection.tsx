@@ -42,29 +42,29 @@ export function ManifestoSection() {
 
       <div className="relative z-[1] w-full max-w-[995px]">
         <h2 className="mx-auto whitespace-normal text-center text-[clamp(2.25rem,9vw,3.8rem)] font-bold uppercase leading-[0.98] tracking-[-0.035em] text-cream lg:hidden">
-          <span className="block">Your brand</span>
+          <span className="block">Your website</span>
           <span className="block font-display text-[1.25em] font-normal lowercase leading-[0.9] tracking-[-0.02em] text-brand drop-shadow-[0_0_54px_rgba(248,232,216,0.15)] lg:text-[117px] lg:leading-[117px] lg:tracking-[-2.35px]">
-            deserves
+            should support
           </span>
           <span className="block">
-            More than a <span className="text-brand drop-shadow-[0_0_60px_rgba(195,0,2,0.4)]">template.</span>
+            business <span className="text-brand drop-shadow-[0_0_60px_rgba(195,0,2,0.4)]">goals.</span>
           </span>
         </h2>
 
         <div className="relative hidden h-[403px] w-[995px] lg:block">
           <div className="absolute left-0 right-0 top-0 h-[320px] whitespace-nowrap">
             <p className="absolute left-[24%] right-[23.69%] top-[-13px] text-center text-[90px] font-bold uppercase leading-[90px] tracking-[-3.15px] text-cream">
-              Your brand
+              Your website
             </p>
             <p className="absolute left-[19.02%] right-[19.08%] top-[95px] text-center font-display text-[117px] font-normal lowercase leading-[117px] tracking-[-2.35px] text-brand drop-shadow-[0_0_54px_rgba(248,232,216,0.15)]">
-              deserves
+              should support
             </p>
             <div className="absolute left-0 right-0 top-[230px] h-[90px] text-[90px] font-bold uppercase leading-[90px] tracking-[-3.15px]">
               <p className="absolute left-0 right-[45.7%] top-[-13px] text-left text-cream">
-                More than a
+                Business
               </p>
               <p className="absolute left-[calc(50%+59px)] top-[-13px] text-brand drop-shadow-[0_0_54px_rgba(195,0,2,0.4)]">
-                template
+                goals
               </p>
               <p className="absolute left-[97.62%] right-[-0.33%] top-[-13px] text-brand">
                 .

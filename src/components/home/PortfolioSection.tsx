@@ -2,9 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { PortfolioProject } from "../../lib/portfolio";
-import { portfolioProjects } from "../../lib/portfolio";
-
-const visibleProjects = portfolioProjects.slice(0, 3);
 
 function ProjectCard({
   featured = false,
@@ -55,7 +52,9 @@ function ProjectCard({
   );
 }
 
-export function PortfolioSection() {
+export function PortfolioSection({ projects }: { projects: PortfolioProject[] }) {
+  const visibleProjects = projects.slice(0, 3);
+
   return (
     <section
       id="portfolio"
@@ -69,12 +68,12 @@ export function PortfolioSection() {
               Selected work
             </p>
             <h2 className="max-w-[648px] text-[2.15rem] font-bold uppercase leading-[0.98] tracking-[-0.035em] text-cream sm:text-[2.7rem] lg:text-[76px] lg:leading-[76px] lg:tracking-[-2.65px]">
-              Work that
+              Selected
               <br />
               <span className="font-display text-[0.88em] font-normal lowercase leading-none tracking-[-0.02em] text-brand lg:text-[66px] lg:leading-[66px] lg:tracking-[-1.32px]">
-                speaks
+                client
               </span>{" "}
-              for itself.
+              projects.
             </h2>
           </div>
 
@@ -87,9 +86,11 @@ export function PortfolioSection() {
         </div>
 
         <div className="mt-[65px] grid gap-[1.125rem] lg:grid-cols-2">
-          <div className="lg:col-span-2">
-            <ProjectCard featured project={visibleProjects[0]} />
-          </div>
+          {visibleProjects[0] ? (
+            <div className="lg:col-span-2">
+              <ProjectCard featured project={visibleProjects[0]} />
+            </div>
+          ) : null}
           {visibleProjects.slice(1).map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

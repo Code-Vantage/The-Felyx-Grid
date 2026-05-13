@@ -6,7 +6,7 @@ import { Footer, Header } from "../../components/home";
 export const metadata: Metadata = {
   title: "Contact | The Felyx Grid",
   description:
-    "Start a project with The Felyx Grid. Tell us about your brand, goals, budget, and timeline.",
+    "Contact The Felyx Grid to discuss a website, product interface, or brand identity project.",
 };
 
 export default function Contact() {

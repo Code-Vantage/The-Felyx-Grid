@@ -74,7 +74,7 @@ export function AboutSection() {
             <span className="font-display text-[0.58em] font-normal lowercase leading-none tracking-[-0.02em] text-brand lg:text-[35px] lg:leading-[35px] lg:tracking-[-0.7px]">
               shape
             </span>{" "}
-            our craft.
+            guide our work.
           </h2>
         </div>
 
@@ -92,21 +92,21 @@ export function AboutSection() {
 
           <div className="px-[1.375rem] py-7 sm:px-11 lg:px-[58px] lg:pb-[58px] lg:pt-[58px]">
             <PhilosophyRow number="01" featured>
-              We build <Highlight>visually striking</Highlight> digital ecosystems
-              <br className="hidden lg:block" /> designed for ambitious modern brands.
+              We design <Highlight>clear websites</Highlight> and product interfaces
+              <br className="hidden lg:block" /> for businesses with practical goals.
             </PhilosophyRow>
             <PhilosophyRow number="02">
-              Every experience is engineered for <Highlight>clarity</Highlight>,{" "}
-              <Highlight>speed</Highlight>, and <Highlight>conversion</Highlight>.
+              Each project is planned around <Highlight>usability</Highlight>,{" "}
+              <Highlight>performance</Highlight>, and measurable outcomes.
             </PhilosophyRow>
             <PhilosophyRow number="03">
-              We merge <Highlight>strategy</Highlight>, <Highlight>aesthetics</Highlight>, and{" "}
-              <Highlight>technology</Highlight> into
-              <br className="hidden lg:block" /> scalable digital products.
+              We combine <Highlight>strategy</Highlight>, <Highlight>interface design</Highlight>, and{" "}
+              <Highlight>development</Highlight> into
+              <br className="hidden lg:block" /> maintainable digital products.
             </PhilosophyRow>
             <PhilosophyRow number="04">
-              <Highlight>Premium execution</Highlight> and transparent collaboration
-              <br className="hidden lg:block" /> define everything we create.
+              <Highlight>Clear communication</Highlight> and practical delivery
+              <br className="hidden lg:block" /> guide every stage of the project.
             </PhilosophyRow>
           </div>
         </GlassPanel>
