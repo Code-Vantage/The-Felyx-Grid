@@ -31,7 +31,7 @@ export function Header({
       className="fixed left-1/2 top-3.5 z-50 flex h-[58px] w-[min(1089px,calc(100vw-43px))] -translate-x-1/2 items-center gap-[clamp(0.9rem,1.8vw,1.8rem)] rounded-full border border-white/[0.09] bg-[#060001]/70 py-0 pl-4 pr-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_16px_45px_rgba(0,0,0,0.32)] backdrop-blur-2xl max-[1600px]:w-[min(1008px,calc(100vw-29px))] max-[1180px]:w-[calc(100vw-29px)] max-[640px]:top-3 max-[640px]:h-14 max-[640px]:w-[calc(100vw-22px)] max-[640px]:pl-3.5 max-[640px]:pr-2.5">
       <a
         href={homeHref}
-        className="flex h-[47px] w-[94px] shrink-0 items-center max-[640px]:h-[45px] max-[640px]:w-[88px]"
+        className="flex h-[51px] w-[102px] shrink-0 items-center max-[640px]:h-[48px] max-[640px]:w-[96px]"
         aria-label="The Felyx Grid home"
       >
         <Image
@@ -40,7 +40,7 @@ export function Header({
           width={484}
           height={404}
           priority
-          className="h-[47px] w-[94px] object-contain max-[640px]:h-[45px] max-[640px]:w-[88px]"
+          className="h-[51px] w-[102px] object-contain max-[640px]:h-[48px] max-[640px]:w-[96px]"
         />
       </a>
 
