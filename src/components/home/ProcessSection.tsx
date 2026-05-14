@@ -103,7 +103,7 @@ function ProcessItem({
       <h3 className="mt-2 text-[2.15rem] font-bold uppercase leading-tight tracking-[-0.035em] text-cream sm:text-[2.7rem] lg:mt-1 lg:text-[50px] lg:leading-[50px] lg:tracking-[-1.75px]">
         {step.title}
       </h3>
-      <p className="mt-3.5 max-w-[41rem] font-display text-lg leading-8 text-cream/55 lg:mt-[1.125rem] lg:text-[19px] lg:leading-[30px]">
+      <p className="mt-3.5 max-w-[41rem] font-sans text-lg leading-8 text-cream/55 lg:mt-[1.125rem] lg:text-[19px] lg:leading-[30px]">
         {step.description}
       </p>
     </article>

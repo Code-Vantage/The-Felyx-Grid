@@ -8,7 +8,7 @@ type PhilosophyRowProps = {
 
 function Highlight({ children }: { children: ReactNode }) {
   return (
-    <span className="text-brand-soft drop-shadow-[0_0_24px_rgba(195,0,2,0.4)]">
+    <span className="text-brand-soft text-[15px] sm:text-[20px] lg:text-[22px] font-display drop-shadow-[0_0_24px_rgba(195,0,2,0.4)]">
       {children}
     </span>
   );
@@ -45,7 +45,7 @@ function PhilosophyRow({ number, children, featured }: PhilosophyRowProps) {
       <span className="font-display text-[22px] leading-none text-brand/50 sm:text-[29px] sm:leading-[29px]">
         {number}
       </span>
-      <p className="font-display text-[17px] leading-7 text-cream sm:text-[22px] sm:leading-8 lg:text-[25px] lg:leading-[38px]">
+      <p className="font-sans text-[17px] leading-7 text-cream sm:text-[22px] sm:leading-8 lg:text-[25px] lg:leading-[38px]">
         {children}
       </p>
     </div>

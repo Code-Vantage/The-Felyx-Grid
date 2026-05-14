@@ -65,11 +65,10 @@ export function Footer({ hrefPrefix = "" }: FooterProps = {}) {
 
           <a
             href={`mailto:${email}`}
-            className="relative mt-[1.125rem] inline-flex h-[54px] w-full max-w-[306px] items-center justify-center overflow-hidden rounded-full bg-[linear-gradient(170deg,#d8001f_0%,#8b0001_100%)] font-display text-xs uppercase tracking-[2.1px] text-cream shadow-[0_2px_4px_rgba(0,0,0,0.2),0_7px_22px_rgba(195,0,2,0.3),inset_0_-2px_4px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.25)] transition hover:-translate-y-0.5"
+            className="relative mt-[1.125rem] inline-flex h-[54px] w-full max-w-[342px] items-center justify-center gap-3 overflow-hidden rounded-full border border-white/15 border-t-white/30 bg-[linear-gradient(166.463deg,rgba(216,0,31,0.5),rgba(139,0,1,0.5))] px-6 font-display text-xs font-normal uppercase leading-normal tracking-[2.1px] text-cream shadow-[inset_0_-2.8px_5.6px_rgba(0,0,0,0.3),inset_0_1.4px_0_rgba(255,255,255,0.25),0_2.8px_5.6px_rgba(0,0,0,0.2),0_11px_34px_rgba(195,0,2,0.3)] transition hover:-translate-y-0.5 before:absolute before:left-[-97.31%] before:right-[99.11%] before:top-[1.85px] before:h-[46px] before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2)_50%,transparent)] before:content-[''] sm:px-8"
           >
-            <span className="pointer-events-none absolute inset-y-px left-0 w-full bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)]" />
-            {email}
-            <span className="ml-3 text-base">↗</span>
+            <span className="relative z-[1]">{email}</span>
+            <span className="relative z-[1] text-base">↗</span>
           </a>
 
           <a
@@ -78,7 +77,7 @@ export function Footer({ hrefPrefix = "" }: FooterProps = {}) {
             href={homeHref}
           >
             <Image
-              src="/logo.png"
+              src="/logo-footer.png"
               alt="The Felyx Grid"
               width={484}
               height={404}

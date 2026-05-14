@@ -51,10 +51,10 @@ export function HeroSection() {
         <div className="mt-11 flex w-full max-w-sm flex-col items-center justify-center gap-3 max-[640px]:mt-10 max-[640px]:max-w-[21rem] max-[640px]:gap-3 sm:max-w-none sm:flex-row sm:gap-3.5">
           <a
             href="/contact#contact-form"
-            className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/15 border-t-white/30 bg-[linear-gradient(168deg,#d8001f,#8b0001)] px-[1.375rem] font-display text-[0.68rem] uppercase tracking-widest text-cream shadow-[0_7px_22px_rgba(195,0,2,0.3)] max-[640px]:h-11 max-[640px]:text-[0.64rem] sm:w-auto"
+            className="relative inline-flex h-11 w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/15 border-t-white/30 bg-[linear-gradient(166.463deg,rgba(216,0,31,0.5),rgba(139,0,1,0.5))] px-[1.375rem] font-display text-[0.68rem] font-normal uppercase leading-normal tracking-widest text-cream shadow-[inset_0_-2.8px_5.6px_rgba(0,0,0,0.3),inset_0_1.4px_0_rgba(255,255,255,0.25),0_2.8px_5.6px_rgba(0,0,0,0.2),0_11px_34px_rgba(195,0,2,0.3)] transition hover:-translate-y-0.5 before:absolute before:left-[-97.31%] before:right-[99.11%] before:top-[1.85px] before:h-[46px] before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2)_50%,transparent)] before:content-[''] max-[640px]:h-11 max-[640px]:text-[0.64rem] sm:w-auto"
           >
-            Start Your Project
-            <span aria-hidden="true">-&gt;</span>
+            <span className="relative z-[1]">Start Your Project</span>
+            <span aria-hidden="true" className="relative z-[1]">-&gt;</span>
           </a>
           <Link
             href="/portfolio"

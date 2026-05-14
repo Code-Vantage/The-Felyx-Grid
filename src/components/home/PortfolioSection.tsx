@@ -39,11 +39,11 @@ function ProjectCard({
           </span>
         </div>
 
-        <div className="font-display">
-          <p className="text-[10px] uppercase tracking-[2.5px] text-brand">
+        <div className="font-sans">
+          <p className="text-[14px] uppercase tracking-[2.5px] text-brand">
             {project.category}
           </p>
-          <h3 className="mt-2 text-[32px] leading-none tracking-[-0.65px] text-cream">
+          <h3 className="mt-2 text-[40px] leading-none tracking-[-0.65px] text-cream">
             {project.name}
           </h3>
         </div>

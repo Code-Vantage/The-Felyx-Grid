@@ -59,7 +59,7 @@ function FAQCard({ item, index }: { item: FAQItem; index: number }) {
         <span className="w-6 shrink-0 text-[10px] tracking-[2.5px] text-brand">
           {number}
         </span>
-        <span className="min-w-0 flex-1 text-[17px] leading-tight tracking-[-0.08px] text-cream/55 group-open:text-cream">
+        <span className="min-w-0 flex-1 text-[20px] leading-tight tracking-[-0.08px] text-cream/55 group-open:text-cream font-sans">
           {item.question}
         </span>
         <FAQIcon />

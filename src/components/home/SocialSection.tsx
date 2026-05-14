@@ -4,11 +4,11 @@ type SocialLink = {
   name: string;
   handle: string;
   href: string;
-  side: "top" | "right" | "bottom" | "left";
+  side: "top" | "bottom";
   delay: string;
 };
 
-const socialSides: SocialLink["side"][] = ["top", "right", "bottom", "left"];
+const socialSides: SocialLink["side"][] = ["top", "bottom"];
 const socialDelays = ["0s", "-1.4s", "-2.6s", "-3.8s"];
 
 const socialLinks: SocialLink[] = socialProfiles.map((profile, index) => ({
@@ -19,9 +19,7 @@ const socialLinks: SocialLink[] = socialProfiles.map((profile, index) => ({
 
 const sidePositions = {
   top: "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2",
-  right: "left-full top-1/2 -translate-x-1/2 -translate-y-1/2",
   bottom: "left-1/2 top-full -translate-x-1/2 -translate-y-1/2",
-  left: "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
 } satisfies Record<SocialLink["side"], string>;
 
 function SocialPill({ link, className = "" }: { link: SocialLink; className?: string }) {
@@ -83,7 +81,7 @@ export function SocialSection() {
         <h2 className="mx-auto max-w-[684px] text-[2.15rem] font-bold uppercase leading-[1.02] tracking-[-0.035em] text-cream sm:text-[3.4rem] lg:text-[68px] lg:leading-[68px] lg:tracking-[-2.4px]">
           See what we&apos;re
           <br />
-          building <span className="text-brand">next.</span>
+          building <span className="text-brand font-display text-[2rem] sm:text-[3.2rem] lg:text-[52px]">next.</span>
         </h2>
 
         <PresenceOrb />

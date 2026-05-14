@@ -77,7 +77,7 @@ function ServiceCard({ service, index }: { service: ServiceCard; index: number }
       <h3 className="relative mt-11 font-display text-[25px] leading-none tracking-[-0.5px] text-cream">
         {service.title}
       </h3>
-      <p className="relative mt-5 max-w-[18rem] font-display text-[14px] leading-[22px] text-cream/55">
+      <p className="relative mt-5 max-w-[18rem] font-sans text-[14px] leading-[22px] text-cream/55">
         {service.description}
       </p>
 

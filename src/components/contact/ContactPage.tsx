@@ -12,8 +12,6 @@ const iconDesign = "palette";
 const iconDevelopment = "code";
 const iconLaunch = "rocket";
 const iconInstagram = "instagram";
-const iconBehance = "behance";
-const iconDribbble = "dribbble";
 const iconLinkedin = "linkedin";
 const iconCalendar = "calendar";
 
@@ -28,8 +26,6 @@ type IconName =
   | "code"
   | "rocket"
   | "instagram"
-  | "behance"
-  | "dribbble"
   | "linkedin"
   | "calendar";
 
@@ -95,12 +91,16 @@ const expectations = [
   "NDA available upon request",
 ];
 
-const socialIcons = [
-  { icon: iconInstagram, label: "Instagram", href: socialProfiles[0].href },
-  { icon: iconBehance, label: "Behance", href: socialProfiles[1].href },
-  { icon: iconDribbble, label: "Dribbble", href: socialProfiles[3].href },
-  { icon: iconLinkedin, label: "LinkedIn", href: socialProfiles[2].href },
-] satisfies { icon: IconName; label: string; href: string }[];
+const socialIconByName = {
+  Instagram: iconInstagram,
+  LinkedIn: iconLinkedin,
+} satisfies Record<(typeof socialProfiles)[number]["name"], IconName>;
+
+const socialIcons = socialProfiles.map((profile) => ({
+  icon: socialIconByName[profile.name],
+  label: profile.name,
+  href: profile.href,
+}));
 
 const web3formsAccessKey = process.env.WEB3FORMS_ACCESS_KEY ?? "";
 
@@ -183,22 +183,6 @@ function IconImage({ src, className = "size-5" }: { src: IconName; className?: s
         <rect {...strokeProps} height="16" rx="4" width="16" x="4" y="4" />
         <circle {...strokeProps} cx="12" cy="12" r="3.5" />
         <circle fill="currentColor" cx="16.8" cy="7.2" r="1" />
-      </>
-    ),
-    behance: (
-      <>
-        <text fill="currentColor" fontFamily="Arial, sans-serif" fontSize="8" fontWeight="700" x="3" y="15">
-          Be
-        </text>
-        <path {...strokeProps} d="M14 8h6" />
-      </>
-    ),
-    dribbble: (
-      <>
-        <circle {...strokeProps} cx="12" cy="12" r="8" />
-        <path {...strokeProps} d="M5 10c4.5 0 8.4-1.3 11-4" />
-        <path {...strokeProps} d="M8 19c1.8-4.7 5.2-7.7 11-8" />
-        <path {...strokeProps} d="M9 5c2.8 3.4 4.6 7.8 5 14" />
       </>
     ),
     linkedin: (
@@ -500,11 +484,11 @@ export function ContactPage() {
           <span className="text-brand">un</span>forgettable?
         </h1>
         <a
-          className="mt-6 inline-flex h-16 items-center justify-center gap-3 rounded-full bg-brand px-8 font-display text-[15px] text-white transition hover:-translate-y-0.5 hover:bg-[#d8001f]"
+          className="relative mt-6 inline-flex h-16 items-center justify-center gap-3 overflow-hidden rounded-full border border-white/15 border-t-white/30 bg-[linear-gradient(166.463deg,rgba(216,0,31,0.5),rgba(139,0,1,0.5))] px-8 font-display text-[15px] font-normal uppercase leading-normal tracking-[0.09em] text-cream shadow-[inset_0_-2.8px_5.6px_rgba(0,0,0,0.3),inset_0_1.4px_0_rgba(255,255,255,0.25),0_2.8px_5.6px_rgba(0,0,0,0.2),0_11px_34px_rgba(195,0,2,0.3)] transition hover:-translate-y-0.5 before:absolute before:left-[-97.31%] before:right-[99.11%] before:top-[1.85px] before:h-[46px] before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2)_50%,transparent)] before:content-['']"
           href="#contact-form"
         >
-          Start Your Project
-          <IconImage src={iconArrow} />
+          <span className="relative z-[1]">Start Your Project</span>
+          <IconImage src={iconArrow} className="relative z-[1] size-5" />
         </a>
       </section>
 
