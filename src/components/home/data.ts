@@ -9,6 +9,6 @@ export const socialProfiles = [
   {
     name: "LinkedIn",
     handle: "/the-felyx-grid",
-    href: "https://www.linkedin.com/company/the-felyx-grid",
+    href: "https://www.linkedin.com/company/the-felyx-grid-co/",
   },
 ] as const;
